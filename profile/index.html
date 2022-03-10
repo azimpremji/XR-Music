@@ -1,0 +1,112 @@
+<html>
+    <head>
+        <title>XR-Music</title>
+        <meta charset="utf-8">
+        <link href="css/style.css" rel="stylesheet" type="text/css" />
+        <link href="css/input.css" rel="stylesheet" type="text/css" />
+        <link href="/css/js-snackbar.min.css" rel="stylesheet" type="text/css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="js/web3shelper.js" type="module"></script>
+        <script src="/js/js-snackbar.min.js"></script>
+        <script src='https://unpkg.com/xrpl@2.1.0-beta.1'></script>
+    </head>
+    <body>
+        <div id="ppopup" class="ppopup" style="display: none;">
+            <div class="input_container">
+                <img src="./img/xrp.png" height="32px" width="32px">
+                <div class="col-3">
+                    <input class="effect-15" type="text" id="nft_amount" placeholder="Sell Price (In XRP)">
+                    <span class="focus-bg"></span>
+                </div>
+            </div>
+            <div style="flex-direction: column; display: flex;justify-content: center; align-items: center; margin-top: 15px;">
+                <button class="login" id="submit_sell">Submit</button>
+                <img src="img/loader.gif" height="64px" width="64px" id="sell_loader_gif" style="display: none;">
+            </div>
+        </div>
+        <div id="ppopup_connect" class="ppopup" style="display: none;">
+            <div id="ppopup_connect_btn" style="flex-direction: column; display: flex;justify-content: center; align-items: center;">
+                <button class="login" style="margin-bottom: 20px;" id="import_wallet">Import Wallet</button>
+                <button class="login" id="create_wallet">Create Wallet</button>
+            </div>
+            <div id="ppopup_connect_imp" style="flex-direction: column; display: flex;justify-content: center; align-items: center; display: none;">
+                <span style="color: whitesmoke;">Your seed phrase will only stored locally!</span>
+                <div class="input_container" style="margin-top: 5px;">
+                    <img src="./img/seed.jpeg" height="32px" width="32px">
+                    <div class="col-3">
+                        <input class="effect-15" type="text" id="seed_inp" placeholder="Seed Phrase">
+                        <span class="focus-bg"></span>
+                    </div>
+                </div>
+                <button class="login" id="submit_seed">Submit</button>
+            </div>
+            <div id="ppopup_connect_crt" style="flex-direction: column; display: flex;justify-content: center; align-items: center; display: none;">
+                <span style="color: whitesmoke;">Popup will close automatically once you copy your seed!</span>
+                <div class="input_container" style="margin-top: 5px;">
+                    <img src="./img/seed.jpeg" height="32px" width="32px">
+                    <div class="col-3">
+                        <input class="effect-15" type="text" id="ur_seed_phrase" placeholder="Your Seed Phrase">
+                        <span class="focus-bg"></span>
+                    </div>
+                </div>
+                <button class="login" id="copy_seed">Copy</button>
+            </div>
+            <img src="img/loader.gif" height="64px" width="64px" id="wallet_loader_gif" style="display: none;">
+        </div>
+        <div id="record_frame" style="position: absolute; height: 100%; width: 100%;display: flex;justify-content: center; align-items: center; z-index: 2; display: none;"></div>
+        <div style="display:flex; justify-content: space-between;">
+            <div style="margin-left: 25px;margin-top: 22px;margin-bottom: 30px; ">
+                <span style="font-size: x-large; font-family: neon;box-shadow: 0px 0px 10px 10px #0ff; background-color: #0ff;">🎼 Where words fail, music speaks</span>
+            </div>
+            <div style="display: flex; margin-right: 25px;margin-bottom: 30px;margin-top: 12px;align-items: center;">
+                <button class="login" id="acc_connect">Connect</button>
+                
+                <span style='font: 15px/24px "Lato", Arial, sans-serif;color: white;font-weight: bold; font-size: x-large;margin-right: 12px; ' id="hi_acc"></span>
+                <!--<button class="login" id="deply_contract" style="margin-left: 10px;">Deploy Contract</button>
+                <img id="verified_symbl" style="display: none;" height="32px" width="32px"  src="./img/checklist.png">-->
+                <button class="login" onclick="window.location.replace('/market/');">Market Place</button>
+            </div>
+        </div>
+        <div style="width: 20%; display:inline-block; margin-left: 22px;margin-right: 10px;margin-bottom: 10px; border-width: 2px;border-style: dotted; border-color: white;">
+            <div class="input_container">
+                <img src="./img/guitar.png" height="32px" width="32px">
+                <div class="col-3">
+                   
+                    <input class="effect-15" type="text" id="music_name" placeholder="Music Name">
+                    <span class="focus-bg"></span>
+                </div>
+            </div>
+            <div class="input_container">
+                <img src="./img/drum.png" height="32px" width="32px">
+                <div class="col-3">
+                    <input class="effect-15" type="text" id="short_description" placeholder="Short Description">
+                    <span class="focus-bg"></span>
+                </div>
+            </div>
+            <div ondrop="dropHandler(event);" ondragover="dragOverHandler(event);" style=" overflow:hidden;flex-direction: column; padding: 5px; display: flex; margin: 20px;border-radius: 5px;border-style:dashed; border-width: 1.2px; border-color: white;justify-content: center; align-items: center;padding-top: 10px; padding-bottom: 10px;">
+                <span style="font-family: neon;color: white;" id="drop_music_span">Drop Music Here</span>
+                <img src="img/music-note.png">
+            </div>
+            <div id="gif_holder" style="display: none;  justify-content: center; align-items: center;">
+                <img id="gif_holder_img" width="80%">
+            </div>
+            
+            <div style="flex-direction: column; display: flex;justify-content: center; align-items: center;margin: 15px;">
+                <button class="login" id="submit_music">Mint</button>
+                <img src="img/loader.gif" height="64px" width="64px" id="loader_gif" style="display: none;">
+            </div>
+        </div>
+        <div id="menu_" style="margin: 10px; margin-left: 15px; margin-right: 15px;display: flex;flex-direction: column; display: none;">
+            <div style="margin-bottom: 10px;">
+                <span style='font: 15px/24px "Lato", Arial, sans-serif;color: white;font-weight: bold; font-size: larger;' id="bal_span">Your Balance:</span>
+                <span style='font: 15px/24px "Lato", Arial, sans-serif;color: white;font-weight: bold; font-size: larger;' id="bal_val_span">0 XRP</span>
+            </div>
+            <span style='font: 15px/24px "Lato", Arial, sans-serif;color: white;font-weight: bold; font-size: larger;' id="drop_music_span">Your Collection:</span>
+            <div id="items_menu" class="menu_style">
+
+            </div>
+            <img src="img/loader.gif" height="64px" width="64px" style="align-self: center;" id="menu_loader_gif">
+        </div>
+        <script src="js/main.js"></script>
+    </body>
+</html>

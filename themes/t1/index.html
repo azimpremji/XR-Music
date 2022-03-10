@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<title>N-Music</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1, maximum-scale=1, user-scalable=0"/>
+	<link href="css/style.css" rel="stylesheet" type="text/css">
+	<link href="/css/play-btn.css" rel="stylesheet" type="text/css">
+	<script src="/js/gifshot.min.js"></script>
+</head>
+<body>
+
+	<div id="viz">
+		<div id="webgl"></div>
+
+		
+	</div>
+
+	<div class="container" id="btx"><a class="button is-play" id="wsx" >
+		<div class="button-outer-circle has-scale-animation"></div>
+		<div class="button-outer-circle has-scale-animation has-delay-short"></div>
+		<div class="button-icon is-play">
+		  <svg height="100%" width="100%" fill="#0ff">
+			<polygon class="triangle" points="5,0 30,15 5,30" viewBox="0 0 30 15"></polygon>
+			<path class="path" d="M5,0 L30,15 L5,30z" fill="none" stroke="#0ff" stroke-width="1"></path>
+		  </svg>
+		</div></a></div>
+	<div id="controls-holder">
+	
+		<audio id="audioElem" controls="controls" autoplay></audio>
+		
+	</div>
+	
+	<script src="js/main.min.js"></script>
+	<script src="js/handle.js"></script>
+</body>
+</html>

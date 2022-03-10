@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>N-Music</title>
+    <meta charset="utf-8" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1, maximum-scale=1, user-scalable=0"
+    />
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <link href="/css/play-btn.css" rel="stylesheet" type="text/css" />
+    <script src="/js/gifshot.min.js"></script>
+  </head>
+
+  <body>
+    <div id="viz"></div>
+    
+  	<div class="container" id="btx"><a class="button is-play" id="wsx" >
+      <div class="button-outer-circle has-scale-animation"></div>
+      <div class="button-outer-circle has-scale-animation has-delay-short"></div>
+      <div class="button-icon is-play">
+        <svg height="100%" width="100%" fill="#0ff">
+        <polygon class="triangle" points="5,0 30,15 5,30" viewBox="0 0 30 15"></polygon>
+        <path class="path" d="M5,0 L30,15 L5,30z" fill="none" stroke="#0ff" stroke-width="1"></path>
+        </svg>
+      </div></a></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r71/three.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+    <script src="lib/minivents.min.js"></script>
+    <script src="lib/Detector.js"></script>
+    <script src="lib/stats.min.js"></script>
+    <script src="lib/dat.gui.min.js"></script>
+    <script src="lib/SimplexNoise.js"></script>
+    <script src="lib/atutil.js"></script>
+    <script src="lib/shaders/AdditiveBlendShader.js"></script>
+    <script src="lib/shaders/BadTVShader.js"></script>
+    <script src="lib/postprocessing/EffectComposer.js"></script>
+    <script src="lib/postprocessing/RenderPass.js"></script>
+    <script src="lib/postprocessing/ShaderPass.js"></script>
+    <script src="lib/postprocessing/MaskPass.js"></script>
+    <script src="lib/postprocessing/BloomPass.js"></script>
+    <script src="lib/shaders/CopyShader.js"></script>
+    <script src="lib/shaders/ConvolutionShader.js"></script>
+    <script src="lib/shaders/HorizontalBlurShader.js"></script>
+    <script src="lib/shaders/VerticalBlurShader.js"></script>
+    <script src="lib/shaders/MirrorShader.js"></script>
+    <script src="lib/shaders/RGBShiftShader.js"></script>
+    <script src="lib/shaders/FilmShader.js"></script>
+
+    <script src="js/Main.js"></script>
+    <script src="js/AudioHandler.js"></script>
+    <script src="js/ControlsHandler.js"></script>
+    <script src="js/FXHandler.js"></script>
+    <script src="js/VizHandler.js"></script>
+    <script src="js/viz/Bars.js"></script>
+    <script src="js/viz/WhiteRing.js"></script>
+    <script src="js/handle.js"></script>
+  </body>
+</html>

@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <title>XR-Music</title>
+        <meta charset="utf-8">
+        <link href="css/style.css" rel="stylesheet" type="text/css" />
+        <link href="css/input.css" rel="stylesheet" type="text/css" />
+        <link href="/css/js-snackbar.min.css" rel="stylesheet" type="text/css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="js/web3shelper.js" type="module"></script>
+        <script src="/js/js-snackbar.min.js"></script>
+        <script src='https://unpkg.com/xrpl@2.1.0-beta.1'></script>
+    </head>
+    <body>
+        <div style="display: flex; justify-content: space-between;">
+            <div style="margin-left: 25px;margin-top: 22px;margin-bottom: 30px; ">
+                <span style="font-size: x-large; font-family: neon;box-shadow: 0px 0px 10px 10px #0ff; background-color: #0ff;">🎼 Music is the wine that fills the cup of silence.</span>
+            </div>
+            <div style="margin: 15px; display: flex; flex-direction:  row; justify-content: center;align-items: center;">
+                <div id="bal_div" style="display: flex; margin-right: 20px;align-items: center;justify-content: center;display: none; ">
+                    <img src="./img/xrp.png" height="30px" width="30px" style="margin-right: 5px;">
+                    <span id="mybal" style="color: white;">20 XRP</span>
+                </div>
+                <button class="login" onclick="location.replace('/profile/')">Profile</button>
+            </div>
+        </div>
+        <div style="margin: 10px; margin-left: 15px; margin-right: 15px;display: flex;flex-direction: column;">
+            <!--<span style='font: 15px/24px "Lato", Arial, sans-serif;color: white;font-weight: bold; font-size: larger;' id="drop_music_span">Your Collection:</span>-->
+            <div id="items_menu" class="menu_style">
+
+            </div>
+            <img src="img/loader.gif" height="64px" width="64px" style="align-self: center;" id="menu_loader_gif">
+        </div>
+        <script src="js/main.js"></script>
+    </body>
+</html>

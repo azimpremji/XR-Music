@@ -1,0 +1,36 @@
+{
+
+	"config": {
+
+		"name": "default",
+
+		"fxFileName": "fx.json",
+
+		"useMidi": false,
+
+		"useMic": false,
+		"autoPlayAudio": false,
+		"audioURL": "res/mp3/Lantern.mp3",
+		"mute": false,
+
+		"doLoop":false,
+		"loopStart":23,
+		"loopEnd": 35,
+
+		"BPM": 120,
+
+		"fullSize": true,
+		"displayWidth": 1286,
+		"displayHeight": 726,
+		"displayAlign": "top",
+
+		"showControls": false,
+
+		"showIntro": true,
+
+		"useSequence": false
+
+	}
+
+}
+

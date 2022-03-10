@@ -1,0 +1,96 @@
+body{
+    background-color: black;
+}
+
+img{
+  user-drag: none;
+  -webkit-user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+.container{
+    margin-top: 10px;
+
+}
+
+.input_container{
+    display: flex; align-items: center; margin-left: 10px;
+}
+
+@font-face {
+    font-family: neon;
+    src: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/707108/neon.ttf);
+  }
+
+.login {
+    padding: 6px 20px;
+    font-family: neon;
+    background: none;
+    border: 2px solid #fff;
+    color: #fff;
+    font-weight: bold;
+    font-size: 18px;
+    transition: all .5s;
+    cursor: pointer;
+  }
+  
+  .login:hover {
+    background: #fff;
+    color: rgba(0, 0, 0, 1);
+  }
+
+.ppopup{
+  position: absolute;
+  width: 40%;
+  height: 20%;
+  z-index: 1000;
+  background-color: black;
+  border-color: white;
+  border-width: 2px;
+  border-style: dashed;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.menu_item{
+  cursor: pointer; 
+  display: flex;
+  flex-direction: column; 
+  border-color: white; 
+  border-width: 2px; 
+  border-style: dotted; 
+  padding: 10px; 
+  padding-top: 15px; 
+  padding-bottom: 15px;
+  margin-left: auto; 
+  margin-right:auto;
+  margin-top: 22px;
+  max-width: 200px;
+
+}
+
+.menu_style{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 20%);  
+  margin-top: 15px;  
+}
+
+@media only screen and (max-width: 600px) {
+  .menu_style{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 50%);  
+    margin-top: 15px;  
+  }
+}
